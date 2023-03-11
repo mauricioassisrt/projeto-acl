@@ -4,15 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbCardModule, NbMenuModule} from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbActionsModule,
+  NbIconModule,
+  NbCardModule,
+  NbMenuModule,
+  NbFormFieldModule, NbRadioModule, NbCheckboxModule, NbOptionModule, NbSelectModule, NbInputModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSidebarModule, NbButtonModule } from '@nebular/theme';
 import {RouterModule} from "@angular/router";
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +41,12 @@ import {RouterModule} from "@angular/router";
     NbIconModule,
     NbCardModule,
     NbMenuModule.forRoot(),
+    NbFormFieldModule,
+    NbRadioModule,
+    NbCheckboxModule,
+    NbOptionModule,
+    NbSelectModule,
+    NbInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

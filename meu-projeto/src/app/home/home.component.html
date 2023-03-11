@@ -1,0 +1,30 @@
+<nb-layout>
+  <nb-layout-header >
+
+    <nb-actions *ngIf="!abertoMenu" (click)="abrirMenu()" style="cursor: pointer">
+      <nb-action>
+        <nb-icon   icon="menu-2-outline"></nb-icon>
+      </nb-action>
+    </nb-actions>
+    <nb-actions *ngIf="abertoMenu" (click)="fecharMenu()"  style="cursor: pointer">
+      <nb-action>
+        <nb-icon icon="menu-2-outline"></nb-icon>
+      </nb-action>
+    </nb-actions>
+    <h5>Sistemas</h5>
+  </nb-layout-header>
+
+  <nb-sidebar id="menu-sidebar" >
+    <nb-menu  [items]="items"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>Exemplo de card do Nebular</nb-card-header>
+      <nb-card-body class="example-items-rows">
+        <input type="text" nbInput placeholder="Text field">
+        <input type="text" nbInput placeholder="Disabled Text field" disabled>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>
