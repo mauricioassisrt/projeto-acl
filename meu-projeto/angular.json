@@ -6,9 +6,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projeto": {
+    "meu-projeto": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -20,18 +45,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projeto",
+            "outputPath": "dist/meu-projeto",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@nebular/theme/styles/prebuilt/default.css",
-              "src/styles.css"
+              "./node_modules/@nebular/theme/styles/prebuilt/corporate.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -72,10 +98,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "projeto:build:production"
+              "browserTarget": "meu-projeto:build:production"
             },
             "development": {
-              "browserTarget": "projeto:build:development"
+              "browserTarget": "meu-projeto:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +109,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projeto:build"
+            "browserTarget": "meu-projeto:build"
           }
         },
         "test": {
@@ -93,12 +119,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -106,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "projeto"
+  "defaultProject": "meu-projeto"
 }
